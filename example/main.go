@@ -1,24 +1,11 @@
-# CQRS
+package main
 
----
+import (
+	"context"
+	"github.com/cebilon123/cqrs"
+	"log"
+)
 
-### What is CQRS?
-CQRS stands for Command Query Responsibility Segregation. It is a pattern that separates read and write 
-models in your application. It is a good practice to separate read and write models. It is also handy when
-you are doing the DDD (Domain Driven Design) approach.
-
-
-### About
-This is a simple implementation of CQRS pattern in GO. It is made without any external dependencies.
-It was made for one of my projects and I decided to share it with the community. Of course, there could be bugs here
-and there, but I will try to fix them as soon as possible and I will be happy if you report them to me
-or make a pull request.
-
-### How to use
-
-Usage of the library is very simple, and you don't need to instantiate any objects, you just need to register handlers
-in the cqrs package and then dispatch commands and queries.
-```go
 const (
 	commandKey = "commandKey"
 	queryKey   = "queryKey"
@@ -83,14 +70,3 @@ func main() {
 
 	println(res.LastNameAsFirstName)
 }
-
-```
-
-Result:
-```shell
-John
-Andrew
-Andrew
-```
-
-It is hard to make it full generic-like as in C# or Java, but I tried to make it as generic as possible.
